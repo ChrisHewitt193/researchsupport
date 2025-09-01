@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Research Support Sitemap</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f4f4;
+      color: #333;
+    }
+    h2 {
+      color: #0078d4;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 1em;
+    }
+    li {
+      margin: 5px 0;
+      cursor: pointer;
+    }
+    .nested {
+      display: none;
+    }
+    .active {
+      display: block;
+    }
+    .caret::before {
+      content: "▶";
+      color: #0078d4;
+      display: inline-block;
+      margin-right: 6px;
+    }
+    .caret-down::before {
+      content: "▼";
+    }
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+    a:hover {
+      text-decoration: underline;
+      color: #0078d4;
+    }
+  </style>
+</head>
+<body>
+  <h2>Research Support Sitemap</h2>
+  <ul>
+    <li><span class="caret">Research Support</span>
+      <ul class="nested">
+        <li><a href="#">Funding Opportunities</a></li>
+        <li><span class="caret">Eligibility</span>
+          <ul class="nested">
+            <li><a href="#">Eligibility Criteria</a></li>
+            <li><a href="#">International Applicants</a></li>
+          </ul>
+        </li>
+        <li><span class="caret">Submission Checklist</span>
+          <ul class="nested">
+            <li><a href="#">Pre-submission Requirements</a></li>
+            <li><a href="#">Document Templates</a></li>
+            <li><a href="#">Compliance Guidelines</a></li>
+          </ul>
+        </li>
+        <li><span class="caret">Costing & Pricing</span>
+          <ul class="nested">
+            <li><a href="#">FEC Calculator</a></li>
+            <li><a href="#">Pricing Policy</a></li>
+            <li><a href="#">Budget Templates</a></li>
+          </ul>
+        </li>
+        <li><span class="caret">Support Contacts</span>
+          <ul class="nested">
+            <li><a href="#">Faculty Research Officers</a></li>
+            <li><a href="#">Central Support Team</a></li>
+          </ul>
+        </li>
+        <li><a href="#">FAQs</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <script>
+    document.querySelectorAll(".caret").forEach(function(el) {
+      el.addEventListener("click", function() {
+        const nested = this.parentElement.querySelector(".nested");
+        if (nested) {
+          nested.classList.toggle("active");
+          this.classList.toggle("caret-down");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
